@@ -11,7 +11,7 @@ const SongSchema = new Schema({
     type: String,
     required: true,
   },
-  // picture: {
+  // photo: {
   //   type: String,
   //   required: true,
   // },
