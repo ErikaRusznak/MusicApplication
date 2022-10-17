@@ -1,37 +1,21 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AppNavbar from "./component/AppNavbar/AppNavbar.js";
+import LoginScreen from "./screens/LoginScreen/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 
-class App extends Component {
-  render() {
-    return (
-      
-      // <Router>
-      //   <div>
-      //     <div className="App">
-      //       <ul className="App-header">
-      //         <li>
-      //           <Link to="/">Home</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/about">About Us</Link>
-      //         </li>
-      //         <li>
-      //           <Link to="/contact">Contact Us</Link>
-      //         </li>
-      //       </ul>
-      //     </div>
-      //     <Routes>
-      //       <Route exact path="/" element={<Home />}></Route>
-      //       <Route exact path="/about" element={<About />}></Route>
-      //       <Route exact path="/contact" element={<Contact />}></Route>
-      //     </Routes>
-      //   </div>
-      // </Router>
+function App() {
+  return (
+    <div className="App">
+      <AppNavbar />
 
       <div>
+        <Routes>
+          <Route path="/register" element={<RegisterScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+        </Routes>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
