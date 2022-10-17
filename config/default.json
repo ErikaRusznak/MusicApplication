@@ -1,0 +1,4 @@
+{
+ "mongoURI":"mongodb+srv://ErikaRusznak:erikarusznak@musicapp.wtzhfui.mongodb.net/test",
+ "jwtSecret": "sl_myJwtSecret" 
+}
