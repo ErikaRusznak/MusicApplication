@@ -1,13 +1,3 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
-import axios from "axios";
-//axios.defaults.baseURL = "http://localhost:5000";
-import Loading from "../../component/Loading";
-import MainScreen from "../../component/MainScreen";
-import "./RegisterScreen.css";
-import ErrorMessage from "../../component/ErrorMessage";
-
 const RegisterScreen = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
