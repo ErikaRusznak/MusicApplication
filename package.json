@@ -13,10 +13,7 @@
   "author": "Erika Rusznak",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "@reduxjs/toolkit": "^1.8.6",
-=======
->>>>>>> 189af88474df0d3a19d346e38c4716285c310205
     "axios": "^1.1.3",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
@@ -31,12 +28,9 @@
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "nodemon": "^2.0.20",
-<<<<<<< HEAD
     "react-redux": "^8.0.4",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-=======
->>>>>>> 189af88474df0d3a19d346e38c4716285c310205
     "validator": "^13.7.0"
   },
   "devDependencies": {

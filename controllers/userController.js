@@ -35,7 +35,7 @@ const loginUser = asyncHandler(async (req, res) => {
 //@access          Public
 const registerUser = asyncHandler(async (req, res) => {
   const { firstName, lastName, email, password, bankCode } = req.body;
-  
+
   const userExists = await User.findOne({ email });
 
   if (userExists) {
@@ -62,8 +62,8 @@ const registerUser = asyncHandler(async (req, res) => {
     });
   } else {
     return res.status(400).json({ message: "Error occured" });
-        // res.status(400);
-        // throw new Error("Error occured");
+    // res.status(400);
+    // throw new Error("Error occured");
   }
 });
 

@@ -5,11 +5,12 @@ const bodyParser = require("body-parser");
 const songs = require("./routes/api/songs");
 const users = require("./routes/api/users");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
+
+var cors = require("cors");
 const app = express();
 
-const songs = require("./routes/api/songs");
-
 app.use(express.json());
+app.use(cors());
 
 // DB config
 const db = require("./config/keys.js").mongoURI;
@@ -22,6 +23,7 @@ mongoose
 
 // Use Routes
 app.use("/api/songs", songs);
+app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 

@@ -4,9 +4,6 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 const validator = require("validator");
 
-const bcrypt = require("bcrypt");
-const validator = require("validator");
-
 // Create Schema
 const UserSchema = new Schema(
   {
