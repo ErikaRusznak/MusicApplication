@@ -1,4 +1,4 @@
-.allRegister {
+.allLogin {
   background-image: linear-gradient(
     to top,
     rgba(178, 80, 104, 1),
@@ -6,14 +6,14 @@
   );
 }
 
-.registerContainer {
+.loginContainer {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
-.buttonRegister,
-.buttonBackRegister {
+.buttonLogin,
+.buttonBackLogin {
   margin: 45px 20px;
   width: 150px;
   padding: 12px;
@@ -24,34 +24,48 @@
   font-weight: 600;
   border: solid 1px #62103d;
 }
-.buttonRegister:hover,
-.buttonBackRegister:hover {
+
+.buttonLogin:hover,
+.buttonBackLogin:hover {
+  background-color: #e7ab79;
+  border-radius: 20px;
+}
+.loginContainer {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -10%;
+}
+
+.formLabelLogin {
+  font-weight: 900;
+  color: #b23857;
+  font-size: 20px;
+}
+.formControlLogin {
+  border-radius: 50%;
+  color: black;
+  font-weight: 900;
+}
+
+.buttonLogin:hover,
+.buttonBackLogin:hover {
   background-color: #e7ab79;
   border-radius: 20px;
   color: #62103d;
 }
 
-.registerContainer {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.formLabelRegister {
-  font-weight: 900;
-  color: #b23857;
-  font-size: 20px;
-}
-
-.colRegister {
+.colLogin {
   font-size: 20px;
   color: #b72348;
 }
-.colRegisterLink {
+.colLoginLink {
   color: #62103d;
   text-decoration: none;
 }
-.colRegisterLink:hover {
+.colLoginLink:hover {
   color: #62103d;
   text-decoration: none;
   opacity: 0.7;

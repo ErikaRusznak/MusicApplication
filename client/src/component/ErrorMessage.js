@@ -1,5 +1,6 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
+import "./ErrorMessage.css"
 
 const ErrorMessage = ({ variant = "info", children }) => {
   return (
