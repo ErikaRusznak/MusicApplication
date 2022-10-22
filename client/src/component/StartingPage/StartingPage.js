@@ -1,4 +1,5 @@
 import "./StartingPage.css";
+import { Background } from "./images";
 
 function StartingPage() {
   const openNav = () => {
@@ -10,18 +11,13 @@ function StartingPage() {
 
   return (
     <div className="body">
-      <nav>
-        <div className="logo">Music Application</div>
-        {/* menu button */}
-        <span className="menubtn" onClick={openNav}>
-          &#9776;
-        </span>
+      <nav class="startNavbar">
+        <div className="logoStartup">Music Application</div>
+
         <div className="navLinks">
           <ul>
             <li>
-              <a href="/about">
-                About
-              </a>
+              <a href="/about">About</a>
             </li>
             <li>
               <a href="/prices">Prices</a>
@@ -33,25 +29,12 @@ function StartingPage() {
           </ul>
         </div>
       </nav>
-      {/* side navbar for the menu button */}
-      <div className="sideNav" id="sidenav">
-        <a href="/" className="closeBtn" onClick={closeNav}>
-          &#128473;
-        </a>
-        <div className="elements">
-          <a href="/about">About</a>
-          <a href="/prices">Prices</a>
-          <a href="/contact">Contact</a>
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
-        </div>
-      </div>
 
       <div
-        className="d-flex align-items-between justify-content-center"
+        className="d-flex justify-content-center"
         style={{ height: "100vh" }}
       >
-        <div className="d-flex align-items-center">
+        <div className="welcomeMessage" style={{ height: "50vh" }}>
           <div className="col1">
             <h1>Welcome!</h1>
             <p>
@@ -59,10 +42,10 @@ function StartingPage() {
               music.
             </p>
             <div className="d-flex justify-content-center">
-              <button className="buttons">
+              <button className="buttonsStartPage">
                 <a href="/login">Login</a>
               </button>
-              <button className="buttons">
+              <button className="buttonsStartPage">
                 <a href="/register">Register</a>
               </button>
             </div>

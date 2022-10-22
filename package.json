@@ -28,6 +28,7 @@
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "nodemon": "^2.0.20",
+    "react-icons": "^4.6.0",
     "react-redux": "^8.0.4",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",

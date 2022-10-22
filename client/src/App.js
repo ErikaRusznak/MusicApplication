@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AppNavbar from "./component/AppNavbar/AppNavbar.js";
-import Home from "./component/Home/Home.js";
+import Home from "./screens/Home/Home.js";
 import StartingPage from "./component/StartingPage/StartingPage.js";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-auto flex items-center justify-center min-w-[680px]">
       <div>
         <Routes>
           <Route path="/" element={<StartingPage />} />

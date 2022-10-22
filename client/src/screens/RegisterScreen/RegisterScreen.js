@@ -37,6 +37,9 @@ const RegisterScreen = () => {
   const goBack = () => {
     navigate("/");
   };
+  // const goLogin = () => {
+  //   navigate("/login");
+  // };
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -154,12 +157,16 @@ const RegisterScreen = () => {
             </Form.Group>
 
             <div className="d-flex justify-content-center buttonsRegister">
-              <button type="submit" className="buttonRegister">
+              <button
+                type="submit"
+                className="buttonRegister"
+                // onClick={goLogin}
+              >
                 Submit
               </button>
 
               <button
-                type="submit"
+                type="button"
                 className="buttonBackRegister"
                 onClick={goBack}
               >

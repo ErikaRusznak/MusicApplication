@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const song = require("../../models/Song");
+const artist = require("../../models/Artist");
 
 router.get("/getAll", async (req, res) => {
   const options = {
@@ -9,9 +9,9 @@ router.get("/getAll", async (req, res) => {
       createdAt: 1,
     },
   };
-  const data = await song.find(options);
+  const data = await artist.find(options);
   if (data) {
-    return res.status(200).send({ success: true, song: data });
+    return res.status(200).send({ success: true, artist: data });
   } else {
     return res.status(400).send({ success: false, msg: "Data not found" });
   }
@@ -19,20 +19,14 @@ router.get("/getAll", async (req, res) => {
 
 // async because the function should wait until the mongodb is connected and fetched the data
 router.post("/save", async (req, res) => {
-  const newSong = song({
+  const newArtist = artist({
     name: req.body.name,
-    artist: req.body.artist,
-    album: req.body.album,
-    songURL: req.body.songURL,
     imageURL: req.body.imageURL,
-    musicGenre: req.body.musicGenre,
-    isFavorite: req.body.isFavorite,
-    isBought: req.body.isBought,
   });
 
   try {
-    const savedSong = await newSong.save();
-    return res.status(200).send({ success: true, artist: savedSong });
+    const savedArtist = await newArtist.save();
+    return res.status(200).send({ success: true, artist: savedArtist });
   } catch (error) {
     return res.status(400).send({ success: false, msg: error });
   }
@@ -41,10 +35,10 @@ router.post("/save", async (req, res) => {
 // request to get a single artist information
 router.get("/getOne/:id", async (req, res) => {
   const filter = { _id: req.params.id };
-  const data = await song.findOne(filter);
+  const data = await artist.findOne(filter);
 
   if (data) {
-    return res.status(200).send({ success: true, song: data });
+    return res.status(200).send({ success: true, artist: data });
   } else {
     return res.status(400).send({ success: false, msg: "Data not found" });
   }
@@ -52,7 +46,7 @@ router.get("/getOne/:id", async (req, res) => {
 
 router.delete("/delete/:id", async (req, res) => {
   const filter = { _id: req.params.id };
-  const result = await song.deleteOne(filter);
+  const result = await artist.deleteOne(filter);
   if (result) {
     return res
       .status(200)
@@ -71,17 +65,11 @@ router.put("/update/:id", async (req, res) => {
   };
 
   try {
-    const result = await song.findOneAndUpdate(
+    const result = await artist.findOneAndUpdate(
       filter,
       {
         name: req.body.name,
-        artist: req.body.artist,
-        album: req.body.album,
-        songURL: req.body.songURL,
         imageURL: req.body.imageURL,
-        musicGenre: req.body.musicGenre,
-        isFavorite: req.body.isFavorite,
-        isBought: req.body.isBought,
       },
       options
     );
@@ -90,4 +78,5 @@ router.put("/update/:id", async (req, res) => {
     return res.status(400).send({ success: false, msg: error });
   }
 });
+
 module.exports = router;

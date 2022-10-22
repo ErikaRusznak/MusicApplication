@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const AlbumSchema = new Schema(
+const ArtistSchema = new Schema(
   {
     name: {
       type: String,
@@ -18,4 +18,4 @@ const AlbumSchema = new Schema(
   }
 );
 
-module.exports = Album = mongoose.model("album", AlbumSchema);
+module.exports = Artist = mongoose.model("artist", ArtistSchema);

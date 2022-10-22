@@ -2,15 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-const songs = require("./routes/api/songs");
-const users = require("./routes/api/users");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 var cors = require("cors");
 const app = express();
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // DB config
 const db = require("./config/keys.js").mongoURI;
@@ -21,9 +19,16 @@ mongoose
   .then(() => console.log("MongoDB connected..."))
   .catch((err) => console.log(err));
 
-// Use Routes
-app.use("/api/songs", songs);
+// routes
+const songs = require("./routes/api/songs");
+const users = require("./routes/api/users");
+const albums = require("./routes/api/albums");
+const artists = require("./routes/api/artists");
+
 app.use("/api/users", users);
+app.use("/api/songs", songs);
+app.use("/api/albums", albums);
+app.use("/api/artists", artists);
 
 const port = process.env.PORT || 5000;
 

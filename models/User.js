@@ -9,24 +9,24 @@ const UserSchema = new Schema(
   {
     firstName: {
       type: String,
-      required: true,
+      // required: true,
     },
     lastName: {
       type: String,
-      required: true,
+      // required: true,
     },
     email: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
     },
     password: {
       type: String,
-      required: true,
+      // required: true,
     },
     bankCode: {
       type: String,
-      required: true,
+      // required: true,
     },
     // isAdmin: {
     //   type: Boolean,

@@ -1,9 +1,5 @@
 .allRegister {
-  background-image: linear-gradient(
-    to top,
-    rgba(178, 80, 104, 1),
-    rgba(231, 171, 121, 0.9)
-  );
+  background-image: url(./images/background.jpg);
 }
 
 .registerContainer {
@@ -14,21 +10,24 @@
 
 .buttonRegister,
 .buttonBackRegister {
+  position: relative;
   margin: 45px 20px;
   width: 150px;
   padding: 12px;
-  border-radius: 20px;
-  color: #e7ab79;
-  background-color: #b25068;
+  border-radius: 10px;
+  color: black;
+  background-color: #1ed760;
   font-size: 17px;
   font-weight: 600;
-  border: solid 1px #62103d;
+  border: solid 1px black;
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
 }
 .buttonRegister:hover,
 .buttonBackRegister:hover {
-  background-color: #e7ab79;
-  border-radius: 20px;
-  color: #62103d;
+  background-color: rgba(66, 66, 66, 0.1);
+  border-radius: 10px;
+  color: #1ed760;
+  border-color: rgb(44, 44, 44);
 }
 
 .registerContainer {
@@ -39,20 +38,20 @@
 }
 .formLabelRegister {
   font-weight: 900;
-  color: #b23857;
+  color: white;
   font-size: 20px;
 }
 
 .colRegister {
   font-size: 20px;
-  color: #b72348;
+  color: white;
 }
 .colRegisterLink {
-  color: #62103d;
+  color: #1ed760;
   text-decoration: none;
 }
 .colRegisterLink:hover {
-  color: #62103d;
+  color: #18ad4c;
   text-decoration: none;
   opacity: 0.7;
 }

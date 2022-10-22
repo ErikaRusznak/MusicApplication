@@ -7,12 +7,8 @@
 }
 
 .body {
-  background-image: linear-gradient(
-      to right,
-      rgba(178, 80, 104, 0.75),
-      rgba(231, 171, 121, 0.8)
-    ),
-    url(./images/background.jpg);
+  background-image: url(./images/Backgro.jpg);
+  /* background-color: #2e2c2c; */
   background-size: cover;
   background-attachment: fixed;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -20,16 +16,21 @@
 
 nav {
   width: 100%;
-  height: 80px;
+  height: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 35px 5%;
 }
+.startNavbar {
+  background-color: rgba(0, 0, 0, 0.818);
+  height: 70px;
+}
 
-nav .logo {
+nav .logoStartup {
   font-size: 30px;
   font-weight: 900;
-  color: #7c346c;
+  color: white;
 }
 
 nav ul {
@@ -38,89 +39,37 @@ nav ul {
 }
 
 nav ul li {
-  padding: 8px 15px;
+   padding: 8px 15px;
+  margin-top: 15px;
   transition: 0.2s ease-in; /*for the hover effect*/
 }
 
 nav ul li a {
-  color: #7c346c;
+  color: white;
   font-size: 18px;
   font-weight: 900;
   text-decoration: none;
 }
 
-nav ul li:hover {
-  background-color: #b25068;
+nav ul li a:hover {
+  color: #1ed760;
+}
+
+.welcomeMessage {
+  background-color: rgba(178, 178, 178, 0.2);
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  /* border: solid 1px rgb(0, 0, 0); */
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.535);
   border-radius: 20px;
 }
-
-nav ul li a:hover {
-  color: #e7ab79;
-}
-
-nav .menubtn {
-  font-size: 30px;
-  font-size: bolder;
-  cursor: pointer;
-  display: none;
-  color: #7c346c;
-}
-
-/* responsive navbar css */
-@media screen and (max-width: 600px) {
-  nav .menubtn {
-    display: flex;
-  }
-  nav .navLinks {
-    display: none;
-  }
-  .sideNav {
-    display: block !important;
-  }
-}
-
-.sideNav {
-  height: 100%;
-  width: 20%;
-  position: fixed;
-  top: 0;
-  right: 0%;
-  background-color: #b25068;
-  overflow-x: hidden;
-  transition: 0.3s ease-in;
-  padding-top: 60px;
-  display: none;
-}
-
-.sideNav a {
-  padding: 8px 8px 8px 40px;
-  display: block; /* ca sa fie una sub alta */
-  font-size: 25px;
-  color: #f2c098;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-div.elements a:hover {
-  background-color: #e7ab79;
-  color: #b25068;
-}
-
-.sideNav .closeBtn {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 20px;
-  margin-left: 15px;
-}
-.sideNav .closeBtn:hover {
-  color: #4c3a51;
-}
-
 .col1 h1 {
   font-size: 60px;
   margin-bottom: 10px;
-  color: #62103d;
+  color: white;
   font-weight: 800;
 }
 
@@ -128,30 +77,32 @@ div.elements a:hover {
   font-size: 25px;
   margin-bottom: 20px;
   font-weight: 600;
-  color: #62103d;
+  /* color: #927ef7; */
+  color: white;
 }
 
-button.buttons {
+button.buttonsStartPage {
   margin: 50px;
   width: 150px;
-  padding: 12px 20px;
-  border-radius: 20px;
-  color: #e7ab79;
-  background-color: #b25068;
-  font-size: 17px;
+  padding: 6px 15px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 25px;
   font-weight: 600;
-  border: solid 1px #62103d;
+  border: none;
 }
 
-button.buttons a {
-  color: #e7ab79;
+button.buttonsStartPage a {
+  color: black;
   text-decoration: none;
 }
 
-button.buttons:hover {
-  background-color: #e7ab79;
-  border-radius: 20px;
+button.buttonsStartPage:hover {
+  background-color: rgba(66, 66, 66, 0.7);
+  border-radius: 10px;
 }
-button.buttons a:hover {
-  color: #b25068;
+button.buttonsStartPage a:hover {
+  color: #1ed760;
 }
+
+
