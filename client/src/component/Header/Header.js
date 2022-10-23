@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 
 function Header() {
-
   return (
     <header className="allHeader">
       <img src={Logo} alt="Logo" className="logoPic" />
@@ -19,21 +18,20 @@ function Header() {
             </NavLink>
           </li>
           <li className="headerInstruction">
-            <NavLink to={"/favorites"} className="headerInstruction">
-              Favorites
-            </NavLink>
-          </li>
-          <li className="headerInstruction">
-            <NavLink to={"/yourSongs"} className="headerInstruction">
-              Your Songs
-            </NavLink>
-          </li>
-          <li className="headerInstruction">
             <NavLink to={"/addSong"} className="headerInstruction">
               Add Song
             </NavLink>
           </li>
-         
+          <li className="headerInstruction">
+            <NavLink to={"/about"} className="headerInstruction">
+              About
+            </NavLink>
+          </li>
+          <li className="headerInstruction">
+            <NavLink to={"/contact"} className="headerInstruction">
+              Contact
+            </NavLink>
+          </li>
         </ul>
       </div>
 

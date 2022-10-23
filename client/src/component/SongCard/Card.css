@@ -12,11 +12,17 @@
 div.songName {
   color: white;
   font-size: 20px;
+  cursor: pointer;
 }
 
 div.artistName {
   color: white;
   font-size: 15px;
+
+}
+div.songName:hover,
+div.artistName:hover {
+  opacity: 0.7;
 }
 
 .belowPhoto {

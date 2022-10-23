@@ -15,10 +15,10 @@ const SongSchema = new Schema(
     album: {
       type: String,
     },
-    songURL: {
-      type: String,
-      required: true,
-    },
+    // songURL: {
+    //   type: String,
+    //   required: true,
+    // },
     imageURL: {
       type: String,
       required: true,

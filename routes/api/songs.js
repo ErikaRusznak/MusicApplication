@@ -11,7 +11,7 @@ router.get("/getAll", async (req, res) => {
   };
   const data = await song.find(options);
   if (data) {
-    return res.status(200).send({ success: true, song: data });
+    return res.status(200).send({ data });
   } else {
     return res.status(400).send({ success: false, msg: "Data not found" });
   }
@@ -23,7 +23,7 @@ router.post("/save", async (req, res) => {
     name: req.body.name,
     artist: req.body.artist,
     album: req.body.album,
-    songURL: req.body.songURL,
+    // songURL: req.body.songURL,
     imageURL: req.body.imageURL,
     musicGenre: req.body.musicGenre,
     isFavorite: req.body.isFavorite,
@@ -77,7 +77,7 @@ router.put("/update/:id", async (req, res) => {
         name: req.body.name,
         artist: req.body.artist,
         album: req.body.album,
-        songURL: req.body.songURL,
+        // songURL: req.body.songURL,
         imageURL: req.body.imageURL,
         musicGenre: req.body.musicGenre,
         isFavorite: req.body.isFavorite,

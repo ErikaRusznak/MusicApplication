@@ -10,8 +10,8 @@ const Home = () => {
     <div className="w-full h-auto flex flex-col items-center justify-center">
       <Header />
       {/* <SearchBar /> */}
-      {/* <Menu /> */}
-      <SongCard />
+      <Menu />
+      {/* <SongCard /> */}
     </div>
   );
 };

@@ -14,21 +14,21 @@ import "./Card.css";
 
 export default function SongCard(props) {
   return (
-    <Card className="mx-auto entirecard rounded shadow">
+    <Card className=" entirecard rounded shadow">
       <CardMedia
         className="poza"
         component="img"
         height="140"
-        image="https://i1.sndcdn.com/avatars-000743065870-nr3wm8-t500x500.jpg"
+        image={props.imageURL}
         alt="poza piesa"
       />
       <div className="belowPhoto">
         <CardContent>
           <div component="div" className="songName">
-            Nume piesa
+            {props.name}
           </div>
           <div color="text.secondary" className="artistName">
-            Nume artist
+            {props.artist}
           </div>
         </CardContent>
 

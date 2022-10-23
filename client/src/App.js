@@ -13,6 +13,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/login" element={<LoginScreen />} />
+          {/* <Route path="/favorites" element={<Favorites />} />
+          <Route path="/bought" element={<Bought />} />
+          <Route path="/yours" element={<Yours />} /> */}
         </Routes>
       </div>
     </div>
