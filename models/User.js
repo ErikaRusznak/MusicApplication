@@ -28,17 +28,6 @@ const UserSchema = new Schema(
       type: String,
       // required: true,
     },
-    // isAdmin: {
-    //   type: Boolean,
-    //   required: true,
-    //   default: false,
-    // },
-    // pic: {
-    //   type: String,
-    //   required: true,
-    //   default:
-    //     "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
-    // },
   },
   {
     timestamps: true,
@@ -55,7 +44,7 @@ UserSchema.pre("save", async function (next) {
 });
 
 // will decrypt the password
-UserSchema.methods.matchPassword = async function (enteredPassword) {
+UserSchema.methods.match = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 

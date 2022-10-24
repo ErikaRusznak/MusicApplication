@@ -29,6 +29,9 @@ function Menu() {
   const goYourSongs = () => {
     navigate("/yours");
   };
+  const goAll = () => {
+    navigate("/all");
+  };
 
   useEffect(() => {
     axios
@@ -86,6 +89,11 @@ function Menu() {
           </div>
         </Dropdown>
         <div className="menuItem">
+          <button className="menuButton" onClick={goAll}>
+            All Songs
+          </button>
+        </div>
+        <div className="menuItem">
           <button className="menuButton" onClick={goFavorite}>
             Favorites
           </button>
@@ -102,7 +110,6 @@ function Menu() {
         </div>
       </div>
       <div className="songContainer">
-      
         <div className="songsDisplay">
           {allSongsDisplayed
             ? songs.map((song) => (
@@ -130,6 +137,7 @@ function Menu() {
                   musicGenre={song.musicGenre}
                   isFavorite={song.isFavorite}
                   isBought={song.isBought}
+                  className="songcarrd"
                 />
               ))}
         </div>

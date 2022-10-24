@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [bankCode, setBankCode] = useState("");
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -27,8 +28,8 @@ const LoginScreen = () => {
     e.preventDefault();
     console.log(email);
 
-    if (!password || !email) {
-      setMesssage("Please enter all fields");
+    if (!password || !email || !bankCode) {
+      setMessage("Please enter all fields");
     } else {
       setMessage(null);
       try {
@@ -46,6 +47,7 @@ const LoginScreen = () => {
           {
             email,
             password,
+            bankCode,
           },
           config
         );
@@ -93,6 +95,17 @@ const LoginScreen = () => {
                 value={password}
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label className="formLabelLogin">Bank code</Form.Label>
+              <Form.Control
+                className="formControlLogin"
+                type="text"
+                value={bankCode}
+                placeholder="Bank Code"
+                onChange={(e) => setBankCode(e.target.value)}
               />
             </Form.Group>
 

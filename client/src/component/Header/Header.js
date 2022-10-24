@@ -40,6 +40,7 @@ function Header() {
           href="/"
           onClick={() => {
             localStorage.removeItem("userInfo");
+            localStorage.removeItem("songInfo");
           }}
         >
           Log out

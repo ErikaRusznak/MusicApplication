@@ -3,6 +3,7 @@ import Home from "./screens/Home/Home.js";
 import StartingPage from "./component/StartingPage/StartingPage.js";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
+import Favorites from "./screens/Favorites/Favorites.js";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/login" element={<LoginScreen />} />
-          {/* <Route path="/favorites" element={<Favorites />} />
-          <Route path="/bought" element={<Bought />} />
-          <Route path="/yours" element={<Yours />} /> */}
+          <Route path="/favorites" element={<Favorites />} />
+          {/* <Route path="/all" element={<AllSongs />} /> */}
+          {/* <Route path="/bought" element={<Bought />} /> */}
+          {/* <Route path="/yours" element={<Yours />} /> */}
         </Routes>
       </div>
     </div>

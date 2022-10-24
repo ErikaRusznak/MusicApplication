@@ -12,19 +12,25 @@ const createToken = (_id) => {
 //@route           POST /api/users/login
 //@access          Public
 const loginUser = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, bankCode } = req.body;
 
   const user = await User.findOne({ email });
 
-  if (user && (await user.matchPassword(password))) {
+  if (
+    user &&
+    (await user.match(password))
+  ) {
     res.json({
       _id: user._id,
       firstName: user.firstName,
       email: user.email,
+      bankCode: user.bankCode,
       token: createToken(user._id),
     });
   } else {
-    return res.status(400).json({ message: "Invalid Email or Password" });
+    return res
+      .status(400)
+      .json({ message: "Invalid Email, Password or Bank Code" });
   }
 });
 
