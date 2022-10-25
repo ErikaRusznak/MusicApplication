@@ -1,0 +1,42 @@
+.allBox {
+  border-radius: 50px;
+  background-color: #0000005e;
+  color: #ffffff83;
+  height: 70px;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.allTitle {
+  font-size: 25px;
+
+  padding: 30px;
+  margin: 50px;
+  color: #1ed760;
+  text-shadow: 3px 3px 3px #000;
+  font-weight: 80px;
+}
+
+.pageAll {
+  background-color: rgba(150, 150, 150, 0.099);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 50px;
+  box-shadow: 0 30px 40px black;
+  border-radius: 20px;
+}
+
+.allDisplay {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 100px;
+}
