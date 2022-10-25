@@ -11,7 +11,6 @@ const Home = () => {
       <Header />
       {/* <SearchBar /> */}
       <Menu />
-      {/* <SongCard /> */}
     </div>
   );
 };

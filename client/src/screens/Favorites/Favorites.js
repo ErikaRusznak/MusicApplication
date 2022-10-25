@@ -4,11 +4,13 @@ import { useContext } from "react";
 import FavoritesContext from "../../store/favorites-context";
 import "./Favorites.css";
 import FavoritesList from "./FavoritesList";
+import Header from "../../component/Header/Header.js";
+import UndoIcon from "@mui/icons-material/Undo";
 
 function Favorites() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleBack = () => {
     navigate("/home");
   };
 
@@ -16,18 +18,31 @@ function Favorites() {
   let display;
   if (favoritesCtx.totalFavorites === 0) {
     display = (
-      <p className="textPosition">No favorites here. Maybe add some.</p>
+      <p
+        className="textPosition"
+        style={{ color: "white"}}
+        
+      >
+        No favorites here. Maybe add some.
+      </p>
     );
   } else {
     display = <FavoritesList songs={favoritesCtx.favorites} />;
   }
   return (
-    <div className="backgroundFav">
-      <div className="pageFavorites">
-        <div className="navbarFavorites"></div>
-        <div className="contentFavorites">{display}</div>
+    <>
+      <Header />
+      <div className=" d-flex favoriteBox">
+        <div className="undoIcon">
+          <UndoIcon className="literallyIcon" onClick={handleBack} />{" "}
+          <span className="backText">Back</span>
+        </div>
+        <div className="favoriteTitle">Favorites</div>
       </div>
-    </div>
+      <div className="pageFavorites">
+        <div className="favoritesDisplay">{display}</div>
+      </div>
+    </>
   );
 }
 

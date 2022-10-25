@@ -14,6 +14,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import FavoriteContext from "../../store/favorites-context";
+import BoughtContext from "../../store/bought-context";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import ErrorMessage from "../ErrorMessage.js";
@@ -35,8 +36,8 @@ const style = {
 };
 
 export default function SongCard(props) {
-  const [isBought, setisBought] = useState(false);
-  const [isFavorite, setisFavorite] = useState(false);
+  // const [isBought, setisBought] = useState(false);
+  // const [isFavorite, setisFavorite] = useState(false);
   const [bankCode, setBankCode] = useState("");
   const [message, setMessage] = useState(null);
 
@@ -46,6 +47,9 @@ export default function SongCard(props) {
 
   const favoritesCtx = useContext(FavoriteContext);
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
+
+  const boughtCtx = useContext(BoughtContext);
+  const itemIsBought = boughtCtx.itemIsBought(props.id);
 
   function toggleFavoriteStatusHandler() {
     if (itemIsFavorite) {
@@ -61,6 +65,20 @@ export default function SongCard(props) {
       });
     }
   }
+
+  function addPayedSong() {
+    if (!itemIsBought) {
+      boughtCtx.addBought({
+        id: props.id,
+        name: props.name,
+        artist: props.artist,
+        album: props.album,
+        musicGenre: props.musicGenre,
+        imageURL: props.imageURL,
+      });
+    }
+  }
+
   const buySong = () => {
     const codeFromStorage = JSON.parse(
       localStorage.getItem("userInfo")
@@ -73,28 +91,9 @@ export default function SongCard(props) {
       setMessage("Enter the right code");
     } else {
       setMessage(null);
-      setisBought(true);
+      addPayedSong();
     }
   };
-
-  // const addFavorite = (id) => {
-  //   const config = {
-  //     headers: {
-  //       // "Content-type": "application/json",
-  //     },
-  //   };
-  //   axios
-  //     .put(
-  //       `http://localhost:5000/api/songs/update/${id}`,
-  //       { isFavorite: true },
-  //       config
-  //     )
-  //     .then((res) => {
-  //       setisFavorite(true);
-  //       console.log(res.data);
-  //       localStorage.setItem("songInfo", JSON.stringify(res.data));
-  //     });
-  // };
 
   return (
     <Card className=" entirecard rounded shadow">
@@ -116,7 +115,7 @@ export default function SongCard(props) {
         </CardContent>
 
         <CardActions style={{ height: "2rem" }} className="cardActions">
-          {itemIsFavorite || isFavorite ? (
+          {itemIsFavorite ? (
             <IconButton aria-label="add to favorites">
               <FavoriteIcon
                 className="favoriteButton"
@@ -132,7 +131,7 @@ export default function SongCard(props) {
             </IconButton>
           )}
 
-          {!isBought ? (
+          {!itemIsBought ? (
             <React.Fragment>
               <Button aria-label="add to favorites" onClick={handleOpen}>
                 <AddShoppingCartIcon className="shoppingButton" />

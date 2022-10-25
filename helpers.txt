@@ -17,3 +17,24 @@ E9A6A6
 
 green:
 
+
+
+  // const addFavorite = (id) => {
+  //   const config = {
+  //     headers: {
+  //       // "Content-type": "application/json",
+  //     },
+  //   };
+  //   axios
+  //     .put(
+  //       `http://localhost:5000/api/songs/update/${id}`,
+  //       { isFavorite: true },
+  //       config
+  //     )
+  //     .then((res) => {
+  //       setisFavorite(true);
+  //       console.log(res.data);
+  //       localStorage.setItem("songInfo", JSON.stringify(res.data));
+  //     });
+  // };
+

@@ -4,6 +4,8 @@ import StartingPage from "./component/StartingPage/StartingPage.js";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 import Favorites from "./screens/Favorites/Favorites.js";
+import Bought from "./screens/BoughtSongs/Bought.js";
+
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/favorites" element={<Favorites />} />
           {/* <Route path="/all" element={<AllSongs />} /> */}
-          {/* <Route path="/bought" element={<Bought />} /> */}
+          <Route path="/bought" element={<Bought />} />
           {/* <Route path="/yours" element={<Yours />} /> */}
         </Routes>
       </div>

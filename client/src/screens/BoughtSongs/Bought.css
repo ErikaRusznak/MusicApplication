@@ -1,4 +1,4 @@
-.favoriteBox {
+.boughtBox {
   border-radius: 50px;
   background-color: #0000005e;
   color: #ffffff83;
@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.favoriteTitle {
+.boughtTitle {
   font-size: 25px;
 
   padding: 30px;
@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.favoriteTitle:hover {
+.boughtTitle:hover {
   color: #00ff59;
 }
 .backText {
@@ -45,7 +45,7 @@
   color: #00ff59;
 }
 
-.pageFavorites {
+.pageBought {
   background-color: rgba(150, 150, 150, 0.099);
   width: 80%;
   display: flex;
@@ -56,7 +56,7 @@
   border-radius: 20px;
 }
 
-.favoritesDisplay {
+.boughtDisplay {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
