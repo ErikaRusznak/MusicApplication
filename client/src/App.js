@@ -6,6 +6,7 @@ import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 import Favorites from "./screens/Favorites/Favorites.js";
 import Bought from "./screens/BoughtSongs/Bought.js";
 import All from "./screens/All/All.js";
+import AddSong from "./screens/AddSong/AddSong.js";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/all" element={<All/>} />
+          <Route path="/all" element={<All />} />
           <Route path="/bought" element={<Bought />} />
+          <Route path="/addSong" element={<AddSong />} />
           {/* <Route path="/yours" element={<Yours />} /> */}
         </Routes>
       </div>

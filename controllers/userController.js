@@ -16,16 +16,14 @@ const loginUser = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email });
 
-  if (
-    user &&
-    (await user.match(password))
-  ) {
+  if (user && (await user.match(password))) {
     res.json({
       _id: user._id,
       firstName: user.firstName,
       email: user.email,
       bankCode: user.bankCode,
       token: createToken(user._id),
+      // message: "Song added!"
     });
   } else {
     return res

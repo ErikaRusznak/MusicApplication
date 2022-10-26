@@ -1,7 +1,12 @@
 const express = require("express");
 const router = express.Router();
-
+const asyncHandler = require("express-async-handler");
 const song = require("../../models/Song");
+const key = require("../../config/keys.js").JWTPRIVATEKEY;
+
+const createToken = (_id) => {
+  return jwt.sign({ _id }, key, { expiresIn: "3d" });
+};
 
 router.get("/getAll", async (req, res) => {
   const options = {
@@ -19,23 +24,51 @@ router.get("/getAll", async (req, res) => {
 
 // async because the function should wait until the mongodb is connected and fetched the data
 router.post("/save", async (req, res) => {
-  const newSong = song({
-    name: req.body.name,
-    artist: req.body.artist,
-    album: req.body.album,
-    // songURL: req.body.songURL,
-    imageURL: req.body.imageURL,
-    musicGenre: req.body.musicGenre,
-    isFavorite: req.body.isFavorite,
-    isBought: req.body.isBought,
-  });
+  const { name, artist, album, imageURL, musicGenre, isUsers } = req.body;
 
-  try {
-    const savedSong = await newSong.save();
-    return res.status(200).send({ success: true, artist: savedSong });
-  } catch (error) {
-    return res.status(400).send({ success: false, msg: error });
+  const songExists = await song.findOne({ name });
+  // const newSong = song({
+  //   name: req.body.name,
+  //   artist: req.body.artist,
+  //   album: req.body.album,
+  //   // songURL: req.body.songURL,
+  //   imageURL: req.body.imageURL,
+  //   musicGenre: req.body.musicGenre,
+  //   isUsers: req.body.isUsers,
+  //   // isFavorite: req.body.isFavorite,
+  //   // isBought: req.body.isBought,
+  // });
+  if (songExists) {
+    return res.status(400).json({ message: "Song already exists" });
   }
+  const songCreated = await song.create({
+    name,
+    artist,
+    album,
+    imageURL,
+    musicGenre,
+    isUsers,
+  });
+  if (songCreated) {
+    res.status(200).json({
+      _id: songCreated._id,
+      name: songCreated.name,
+      artist: songCreated.artist,
+      album: songCreated.album,
+      imageURL: songCreated.imageURL,
+      musicGenre: songCreated.musicGenre,
+      isUsers: songCreated.isUsers,
+    });
+  } else {
+    return res.status(400).json({ message: "Error occured" });
+  }
+
+  // try {
+  //   const savedSong = await newSong.save();
+  //   return res.status(200).send({ success: true, artist: savedSong });
+  // } catch (error) {
+  //   return res.status(400).send({ success: false, msg: error });
+  // }
 });
 
 // request to get a single artist information

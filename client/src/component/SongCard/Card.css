@@ -13,11 +13,13 @@ div.songName {
   color: white;
   font-size: 20px;
   cursor: pointer;
+  /* overflow: hidden; */
 }
 
 div.artistName {
   color: white;
   font-size: 15px;
+  text-overflow: ellipsis;
 }
 div.songName:hover,
 div.artistName:hover {

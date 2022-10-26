@@ -22,12 +22,10 @@ mongoose
 // routes
 const songs = require("./routes/api/songs");
 const users = require("./routes/api/users");
-const albums = require("./routes/api/albums");
 const artists = require("./routes/api/artists");
 
 app.use("/api/users", users);
 app.use("/api/songs", songs);
-app.use("/api/albums", albums);
 app.use("/api/artists", artists);
 
 const port = process.env.PORT || 5000;

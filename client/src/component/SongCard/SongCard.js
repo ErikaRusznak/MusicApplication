@@ -106,7 +106,10 @@ export default function SongCard(props) {
       />
       <div className="belowPhoto">
         <CardContent>
-          <div component="div" className="songName">
+          <div
+            component="div"
+            className="songName d-inline-block text-truncate"
+          >
             {props.name}
           </div>
           <div color="text.secondary" className="artistName">
