@@ -1,0 +1,38 @@
+
+.addSongContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formLabelAdd {
+  font-weight: 900;
+  color: white;
+  font-size: 20px;
+}
+
+.selectGenre {
+  margin: 20px;
+  color: #1ed760;
+}
+
+.buttonAddSong {
+  position: relative;
+  margin: 45px 20px;
+  width: 150px;
+  padding: 12px;
+  border-radius: 10px;
+  color: black;
+  background-color: #1ed760;
+  font-size: 17px;
+  font-weight: 600;
+  border: solid 1px black;
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
+}
+
+.buttonAddSong:hover {
+  background-color: rgba(66, 66, 66, 0.1);
+  border-radius: 10px;
+  color: #1ed760;
+  border-color: rgb(44, 44, 44);
+}

@@ -61,7 +61,10 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px 100px;
+  /* overflow: auto;
+  height: 500px; */
 }
+
 
 .textPosition {
   font-size: 20px;

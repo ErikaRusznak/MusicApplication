@@ -20,17 +20,6 @@ const RegisterScreen = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  //If someone is logged, when the login icon is pressed, we will be redirected to HomePage
-  //we will move this to the landing page
-  /*const navigate = useNavigate();
-  useEffect(() => {
-    const userInfo = localStorage.getItem("userInfo");
-    
-    if(userInfo){
-      navigate("/");
-    }
-  }, [navigate]);*/
-
   // redirect to the wanted page
   const navigate = useNavigate();
 

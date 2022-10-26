@@ -54,6 +54,7 @@
   padding: 50px;
   box-shadow: 0 30px 40px black;
   border-radius: 20px;
+  /* height: 500px; */
 }
 
 .boughtDisplay {
@@ -61,6 +62,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px 100px;
+  /* overflow: auto; */
 }
 
 .textPosition {
