@@ -1,12 +1,18 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
 
-const ErrorMessage = ({ variant = "success", children }) => {
+const SuccessMessage = ({ variant = "info", children }) => {
   return (
-    <Alert variant={variant} style={{ fontSize: 20 }}>
-      <strong>{children}</strong>
-    </Alert>
+    <div className="justify-center align-middle mx-auto w-50">
+      <Alert
+        variant={variant}
+        style={{ fontSize: 20 }}
+        className="text-center p-2 align-middle"
+      >
+        <strong>{children}</strong>
+      </Alert>
+    </div>
   );
 };
 
-export default ErrorMessage;
+export default SuccessMessage;
