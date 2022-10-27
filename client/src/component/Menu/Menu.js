@@ -121,8 +121,7 @@ function Menu() {
                   album={song.album}
                   imageURL={song.imageURL}
                   musicGenre={song.musicGenre}
-                  isFavorite={song.isFavorite}
-                  isBought={song.isBought}
+                  isUsers={song.isUsers}
                   className="songcarrd"
                 />
               ))
@@ -135,8 +134,6 @@ function Menu() {
                   album={song.album}
                   imageURL={song.imageURL}
                   musicGenre={song.musicGenre}
-                  isFavorite={song.isFavorite}
-                  isBought={song.isBought}
                   className="songcarrd"
                 />
               ))}

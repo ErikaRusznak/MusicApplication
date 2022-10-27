@@ -51,6 +51,8 @@ export default function SongCard(props) {
   const boughtCtx = useContext(BoughtContext);
   const itemIsBought = boughtCtx.itemIsBought(props.id);
 
+  const songIsUsers = props.isUsers;
+
   function toggleFavoriteStatusHandler() {
     if (itemIsFavorite) {
       favoritesCtx.removeFavorite(props.id);
@@ -62,6 +64,7 @@ export default function SongCard(props) {
         album: props.album,
         musicGenre: props.musicGenre,
         imageURL: props.imageURL,
+        isUsers: props.isUsers,
       });
     }
   }
@@ -75,6 +78,7 @@ export default function SongCard(props) {
         album: props.album,
         musicGenre: props.musicGenre,
         imageURL: props.imageURL,
+        isUsers: props.isUsers,
       });
     }
   }

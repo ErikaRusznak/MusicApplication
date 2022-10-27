@@ -16,7 +16,7 @@ function AddSong() {
   const [album, setAlbum] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [musicGenre, setMusicGenre] = useState("");
-  const [isUsers, setIsUsers] = useState(false);
+  const [isUsers, setIsUsers] = useState(true);
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(null);
@@ -44,9 +44,10 @@ function AddSong() {
             // "Content-type" : "application/json"
           },
         };
+        setIsUsers(true);
 
         const { data } = await axios.post(
-          "/api/songs/save",
+          "/api/userSongs/save",
           {
             name,
             artist,
@@ -64,29 +65,6 @@ function AddSong() {
       } catch (error) {
         setError(error.response.data.message);
       }
-      // const config = {
-      //   headers: {
-      //     // "Content-type" : "application/json"
-      //   },
-      // };
-
-      // const { data } = await axios
-      //   .post(
-      //     "/api/songs/save",
-      //     {
-      //       name,
-      //       artist,
-      //       album,
-      //       imageURL,
-      //       musicGenre,
-      //       isUsers,
-      //     },
-      //     config
-      //   )
-      //   .then((res) => {
-      //     console.log(res.data);
-      //     setMessage("Song is added!");
-      //   });
     }
   };
 
@@ -94,13 +72,12 @@ function AddSong() {
     <div className="allAddSong">
       <div>
         <MainScreen title="Add Song">
+          {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
+          {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+          {success && (
+            <SuccessMessage variant="success">{success}</SuccessMessage>
+          )}
           <div className="addSongContainer">
-            {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
-            {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-            {success && (
-              <SuccessMessage variant="success">{success}</SuccessMessage>
-            )}
-
             <Form onSubmit={submitHandler}>
               <Form.Group className="mb-3">
                 <Form.Label className="formLabelAdd">Song name</Form.Label>
