@@ -1,4 +1,4 @@
-.favoriteBox {
+.yoursBox {
   border-radius: 50px;
   background-color: #0000005e;
   color: #ffffff83;
@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.favoriteTitle {
+.yoursTitle {
   font-size: 25px;
 
   padding: 30px;
@@ -22,30 +22,10 @@
   text-shadow: 3px 3px 3px #000;
   font-weight: 80px;
 }
-
-.undoIcon {
-  color: #1ed760;
-  padding-left: 50px;
-  width: 42%;
-  align-items: center;
-}
-
-.favoriteTitle:hover {
+.yoursTitle:hover {
   color: #00ff59;
 }
-.backText {
-  align-items: center;
-  margin-top: 20px;
-}
-
-.literallyIcon {
-  font-size: 30px;
-}
-.literallyIcon:hover {
-  color: #00ff59;
-}
-
-.pageFavorites {
+.pageUsers {
   background-color: rgba(150, 150, 150, 0.099);
   width: 80%;
   display: flex;
@@ -56,16 +36,11 @@
   border-radius: 20px;
 }
 
-.favoritesDisplay {
+.usersDisplay {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px 100px;
-  /* overflow: auto;
-  height: 500px; */
-}
 
-
-.textPosition {
-  font-size: 20px;
+  /* background-color: red; */
 }

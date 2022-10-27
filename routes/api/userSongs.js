@@ -8,7 +8,7 @@ const createToken = (_id) => {
   return jwt.sign({ _id }, key, { expiresIn: "3d" });
 };
 
-router.get("/getAll", async (req, res) => {
+router.get("/", async (req, res) => {
   const options = {
     sort: {
       createdAt: 1,
@@ -35,7 +35,7 @@ router.post("/save", async (req, res) => {
     name,
     artist,
     album,
-    imageURL: true,
+    imageURL,
     musicGenre,
     isUsers,
   });
@@ -79,31 +79,25 @@ router.delete("/delete/:id", async (req, res) => {
 });
 
 router.put("/update/:id", async (req, res) => {
-  const filter = { _id: req.params.id };
-
-  const options = {
-    upsert: true, // will create a new obj if the id is no found
-    new: true,
-  };
-
-  try {
-    const result = await song.findOneAndUpdate(
-      filter,
+  song
+    .findOneAndUpdate(
+      { _id: req.params.id },
       {
-        name: req.body.name,
-        artist: req.body.artist,
-        album: req.body.album,
-        // songURL: req.body.songURL,
-        imageURL: req.body.imageURL,
-        musicGenre: req.body.musicGenre,
-        isFavorite: req.body.isFavorite,
-        isBought: req.body.isBought,
-      },
-      options
-    );
-    return res.status(200).send({ success: true, data: result });
-  } catch (error) {
-    return res.status(400).send({ success: false, msg: error });
-  }
+        $set: {
+          name: req.body.name,
+          artist: req.body.artist,
+          album: req.body.album,
+          imageURL: req.body.imageURL,
+        },
+      }
+    )
+    .then((result) => {
+      res.status(200).json({ success: true, msg: "Data updated" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).json({ success: false });
+    });
 });
+
 module.exports = router;

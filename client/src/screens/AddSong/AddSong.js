@@ -72,8 +72,16 @@ function AddSong() {
     <div className="allAddSong">
       <div>
         <MainScreen title="Add Song">
-          {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
-          {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+          {message && (
+            <ErrorMessage variant="danger" className="w-50">
+              {message}
+            </ErrorMessage>
+          )}
+          {error && (
+            <ErrorMessage variant="danger" className="w-50">
+              {error}
+            </ErrorMessage>
+          )}
           {success && (
             <SuccessMessage variant="success">{success}</SuccessMessage>
           )}

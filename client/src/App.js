@@ -7,6 +7,7 @@ import Favorites from "./screens/Favorites/Favorites.js";
 import Bought from "./screens/BoughtSongs/Bought.js";
 import All from "./screens/All/All.js";
 import AddSong from "./screens/AddSong/AddSong.js";
+import YourSongs from "./screens/YourSongs/YourSongs.js";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/all" element={<All />} />
           <Route path="/bought" element={<Bought />} />
           <Route path="/addSong" element={<AddSong />} />
-          {/* <Route path="/yours" element={<Yours />} /> */}
+          <Route path="/yours" element={<YourSongs />} />
         </Routes>
       </div>
     </div>

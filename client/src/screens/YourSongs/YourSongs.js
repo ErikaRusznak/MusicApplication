@@ -1,21 +1,21 @@
 import React from "react";
-import "./All.css";
+import "./YourSongs.css";
+import SongCardCreated from "../../component/SongCardCreated/SongCardCreated.js";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "../../component/Header/Header.js";
-import SongCard from "../../component/SongCard/SongCard.js";
 import UndoIcon from "@mui/icons-material/Undo";
 import axios from "axios";
 
-const All = () => {
+function YourSongs() {
   const navigate = useNavigate();
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/songs/getAll")
+      .get("http://localhost:5000/api/userSongs")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setSongs(res.data.data);
       })
       .catch((err) => console.log(err));
@@ -28,17 +28,17 @@ const All = () => {
   return (
     <>
       <Header />
-      <div className="d-flex allBox">
+      <div className="d-flex yoursBox">
         <div className="undoIcon">
           <UndoIcon className="literallyIcon" onClick={handleBack} />{" "}
           <span className="backText">Back</span>
         </div>
-        <div className="allTitle">All Songs</div>
+        <div className="yoursTitle">Your Songs</div>
       </div>
-      <div className="pageAll">
-        <div className="allDisplay">
+      <div className="pageUsers">
+        <div className="usersDisplay">
           {songs.map((data) => (
-            <SongCard
+            <SongCardCreated
               key={data._id}
               id={data._id}
               name={data.name}
@@ -53,6 +53,6 @@ const All = () => {
       </div>
     </>
   );
-};
+}
 
-export default All;
+export default YourSongs;

@@ -21,14 +21,14 @@ mongoose
 
 // routes
 const songs = require("./routes/api/songs");
-const boughtSongs = require("./routes/api/userSongs");
+const userSongs = require("./routes/api/userSongs");
 const users = require("./routes/api/users");
 const artists = require("./routes/api/artists");
 
 app.use("/api/users", users);
 app.use("/api/songs", songs);
 app.use("/api/artists", artists);
-app.use("/api/userSongs", boughtSongs);
+app.use("/api/userSongs", userSongs);
 
 const port = process.env.PORT || 5000;
 

@@ -3,11 +3,11 @@ import { Alert } from "react-bootstrap";
 
 const ErrorMessage = ({ variant = "info", children }) => {
   return (
-    <div className="justify-center align-middle mx-auto w-50">
+    <div className="justify-center align-middle mx-auto ">
       <Alert
         variant={variant}
         style={{ fontSize: 20 }}
-        className="text-center p-2 align-middle"
+        className="text-center align-middle"
       >
         <strong>{children}</strong>
       </Alert>
