@@ -35,6 +35,9 @@ div.artistName:hover {
   color: #1ed760;
   margin-bottom: -4px;
 }
+.shoppingButton {
+  margin-left: 10px;
+}
 
 .cardActions {
   display: flex;
