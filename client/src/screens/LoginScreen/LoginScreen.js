@@ -57,9 +57,14 @@ const LoginScreen = () => {
         setLoading(false);
         setError(false);
         const userInfo = localStorage.getItem("userInfo");
+        console.log(email);
 
         if (userInfo) {
-          navigate("/home");
+          if (email === "admin@gmail.com") {
+            navigate("/homeAdmin");
+          } else {
+            navigate("/home");
+          }
         }
       } catch (error) {
         setError(error.response.data.message);
