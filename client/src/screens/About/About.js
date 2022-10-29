@@ -1,8 +1,7 @@
-import "./StartingPage.css";
+import "./About.css";
 import { Background } from "./images";
 
-function StartingPage() {
-
+function About() {
   return (
     <div className="body">
       <nav class="startNavbar">
@@ -27,20 +26,14 @@ function StartingPage() {
         className="d-flex justify-content-center"
         style={{ height: "100vh" }}
       >
-        <div className="welcomeMessage" style={{ height: "50vh" }}>
-          <div className="col1">
-            <h1>Welcome!</h1>
+        <div className="aboutMessage" style={{ height: "50vh" }}>
+          <div className="about">
+            <h3>What about this application?</h3>
             <p>
-              Thank you for choosing this application so you can buy music.
+              Using this application, you can buy songs, but you also can
+              publish your own!
             </p>
-            <div className="d-flex justify-content-center">
-              <button className="buttonsStartPage">
-                <a href="/login">Login</a>
-              </button>
-              <button className="buttonsStartPage">
-                <a href="/register">Register</a>
-              </button>
-            </div>
+            <p>Do you like Rock, Pop, Electronic and Country? You can find all your favorites here!</p>
           </div>
         </div>
       </div>
@@ -48,4 +41,4 @@ function StartingPage() {
   );
 }
 
-export default StartingPage;
+export default About;

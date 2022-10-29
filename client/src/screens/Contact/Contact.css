@@ -1,0 +1,16 @@
+.contact {
+  margin-top: -15px;
+  font-size: 10px;
+}
+
+.contactMessage {
+  background-color: rgba(187, 170, 170, 0.3);
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  /* border: solid 1px rgb(0, 0, 0); */
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.535);
+  border-radius: 20px;
+}

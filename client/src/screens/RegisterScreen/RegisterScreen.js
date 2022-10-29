@@ -27,7 +27,7 @@ const RegisterScreen = () => {
     navigate("/");
   };
   // const goLogin = () => {
-  //   navigate("/login");
+  //
   // };
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -62,9 +62,7 @@ const RegisterScreen = () => {
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
         setError(false);
-        if (error) {
-          navigate("/login");
-        }
+        navigate("/login");
       } catch (error) {
         setError(error.response.data.message);
         setLoading(false);
