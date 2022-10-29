@@ -10,19 +10,6 @@ function AdminHeader() {
       <img src={Logo} alt="Logo" className="logoPic" />
 
       <div>
-        {/* <ul className="headerInstructions">
-          <li className="headerInstruction">
-            <NavLink to={"/homeAdmin"} className="headerInstruction">
-              Home
-            </NavLink>
-          </li>
-          <li className="headerInstruction">
-            <NavLink to={"/addSong"} className="headerInstruction">
-              Add Song
-            </NavLink>
-          </li>
-          
-        </ul> */}
         <div>Welcome, admin!</div>
       </div>
 

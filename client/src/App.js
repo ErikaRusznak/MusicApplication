@@ -13,6 +13,7 @@ import AllAdmin from "./screens/admin/AllAdmin/AllAdmin.js";
 import AddSongAdmin from "./screens/admin/AddSongAdmin/AddSongAdmin.js";
 import About from "./screens/About/About.js";
 import Contact from "./screens/Contact/Contact.js";
+import Prices from "./screens/Prices/Prices.js";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/addSongAdmin" element={<AddSongAdmin />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/prices" element={<Prices />} />
         </Routes>
       </div>
     </div>
