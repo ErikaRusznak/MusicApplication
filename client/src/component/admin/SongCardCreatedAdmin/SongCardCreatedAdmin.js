@@ -55,7 +55,7 @@ export default function SongCardCreated(props) {
   const [message, setMessage] = useState(null);
 
   const goBack = () => {
-    navigate("/yours");
+    navigate("/homeAdmin");
   };
 
   const getSongDetails = async () => {
@@ -84,6 +84,7 @@ export default function SongCardCreated(props) {
   };
   const handleCloseAgain = () => {
     setOpenAgain(false);
+    navigate("/homeAdmin");
   };
 
   const deleteSong = async (e) => {
@@ -208,7 +209,7 @@ export default function SongCardCreated(props) {
                     <button
                       type="button"
                       className="buttonAddSong"
-                      onClick={handleClose}
+                      onClick={handleCloseAgain}
                     >
                       Go back
                     </button>

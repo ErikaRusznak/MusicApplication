@@ -1,11 +1,19 @@
 import "./About.css";
 import { Background } from "./images";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
+
+  const starterPage = () => {
+    navigate("/");
+  };
   return (
     <div className="body">
       <nav class="startNavbar">
-        <div className="logoStartup">Music Application</div>
+        <div className="logoStartup" onClick={starterPage}>
+          Music Application
+        </div>
 
         <div className="navLinks">
           <ul>
@@ -13,7 +21,7 @@ function About() {
               <a href="/about">About</a>
             </li>
             <li>
-              <a href="/prices">Prices</a>
+              <a href="/prices">Buying Method</a>
             </li>
             <li>
               <a href="/contact">Contact</a>
@@ -33,7 +41,10 @@ function About() {
               Using this application, you can buy songs, but you also can
               publish your own!
             </p>
-            <p>Do you like Rock, Pop, Electronic and Country? You can find all your favorites here!</p>
+            <p>
+              Do you like Rock, Pop, Electronic and Country? You can find all
+              your favorites here!
+            </p>
           </div>
         </div>
       </div>

@@ -32,41 +32,52 @@ const RegisterScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
-      setMessage("Passwords do not match");
-    } else {
-      setMessage(null);
-      try {
-        const config = {
-          headers: {
-            // "Content-type": "application/json",
-          },
-        };
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !bankCode
+    )
+      setMessage("Please enter all fields");
+    else {
+      if (password !== confirmPassword) {
+        setMessage("Passwords do not match");
+      } else {
+        setMessage(null);
+        try {
+          const config = {
+            headers: {
+              // "Content-type": "application/json",
+            },
+          };
 
-        setLoading(true);
+          setLoading(true);
 
-        // here we are making the post request on localhost:5000/api/users/login
-        const { data } = await axios.post(
-          "/api/users/register",
-          {
-            firstName,
-            lastName,
-            email,
-            password,
-            bankCode,
-          },
-          config
-        );
+          // here we are making the post request on localhost:5000/api/users/login
+          const { data } = await axios.post(
+            "/api/users/register",
+            {
+              firstName,
+              lastName,
+              email,
+              password,
+              bankCode,
+            },
+            config
+          );
 
-        console.log(data);
-        localStorage.setItem("userInfo", JSON.stringify(data));
-        setLoading(false);
-        setError(false);
-        navigate("/login");
-      } catch (error) {
-        setError(error.response.data.message);
-        setLoading(false);
-        // setError(true);
+          console.log(data);
+          localStorage.setItem("userInfo", JSON.stringify(data));
+          setLoading(false);
+          setError(false);
+          navigate("/login");
+        } catch (error) {
+          setError(error.response.data.message);
+          setLoading(false);
+          // setError(true);
+        }
       }
     }
   };

@@ -18,7 +18,6 @@ import BoughtContext from "../../store/bought-context";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import ErrorMessage from "../ErrorMessage.js";
-
 import "./Card.css";
 
 const style = {
@@ -123,7 +122,7 @@ export default function SongCard(props) {
 
         <CardActions style={{ height: "2rem" }} className="cardActions">
           {itemIsFavorite ? (
-            <IconButton aria-label="add to favorites">
+            <IconButton>
               <FavoriteIcon
                 className="favoriteButton"
                 onClick={toggleFavoriteStatusHandler}
@@ -169,11 +168,11 @@ export default function SongCard(props) {
                     </div>
 
                     <div className="buttonsModal">
-                      <button onClick={handleClose} className="buttonModal">
-                        Go back
-                      </button>
-                      <button onClick={buySong} className="buttonModal">
+                      <button onClick={buySong} className="submitButton">
                         Submit
+                      </button>
+                      <button onClick={handleClose} className="goBackButton">
+                        Go back
                       </button>
                     </div>
                   </div>

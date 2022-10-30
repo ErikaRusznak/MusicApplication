@@ -1,11 +1,20 @@
 import "./Contact.css";
 import { Background } from "./images";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
+
+  const starterPage = () => {
+    navigate("/");
+  };
+
   return (
     <div className="body">
       <nav class="startNavbar">
-        <div className="logoStartup">Music Application</div>
+        <div className="logoStartup" onClick={starterPage}>
+          Music Application
+        </div>
 
         <div className="navLinks">
           <ul>
