@@ -64,17 +64,28 @@ div.artistName:hover {
   bottom: 0;
   margin-bottom: 25px;
 }
-.buttonModal {
+.submitButton {
   background-color: #1ed760;
   margin-left: 65px;
   padding: 5px 10px;
-  border: none;
   border-radius: 10px;
   color: white;
   box-shadow: 3px 3px 3px #323232;
+  border: 1px solid rgba(0, 0, 0, 1);
 }
 
-.buttonModal:hover {
+.goBackButton {
+  background-color: #1ed760;
+  margin-left: 65px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 3px 3px 3px #323232;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.submitButton:hover,
+.goBackButton:hover {
   background-color: #0e7933;
 
   color: white;

@@ -93,7 +93,7 @@ function Menu() {
         </div>
       </div>
       <div className="songContainer">
-        <div className="songsDisplay">
+        <div className="songsDisplayAdmin">
           {allSongsDisplayed
             ? songs.map((song) => (
                 <SongCardCreatedAdmin

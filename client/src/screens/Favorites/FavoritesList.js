@@ -8,7 +8,7 @@ function FavoritesList(props) {
       {props.songs.map((song) => (
         <SongCard
           key={song._id}
-          id={song._id}
+          id={song.id}
           name={song.name}
           artist={song.artist}
           album={song.album}
