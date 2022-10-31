@@ -73,3 +73,9 @@
 .songcarrd:hover {
   opacity: 0.7;
 }
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 10px; */
+}

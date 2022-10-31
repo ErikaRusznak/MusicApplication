@@ -5,10 +5,12 @@ import AdminHeader from "../../../component/admin/AdminHeader/AdminHeader.js";
 import SongCardCreatedAdmin from "../../../component/admin/SongCardCreatedAdmin/SongCardCreatedAdmin.js";
 import UndoIcon from "@mui/icons-material/Undo";
 import axios from "axios";
+import SearchBar from "../../../component/SearchBar/SearchBar.js";
 
 const All = () => {
   const navigate = useNavigate();
   const [songs, setSongs] = useState([]);
+  const [copySongs, setCopySongs] = useState([]);
 
   useEffect(() => {
     axios
@@ -16,6 +18,7 @@ const All = () => {
       .then((res) => {
         console.log(res.data);
         setSongs(res.data.data);
+        setCopySongs(res.data.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -33,6 +36,26 @@ const All = () => {
           <span className="backText">Back</span>
         </div>
         <div className="allTitle">All Songs</div>
+      </div>
+      <div className="searchBox">
+        <div>
+          <SearchBar
+            placeholder="Enter the title... "
+            handleChange={(e) => {
+              const field = e.target.value;
+              console.log(field);
+              if (field === "") {
+                setSongs(copySongs);
+              } else {
+                let filteredSearch = [];
+                filteredSearch = songs.filter((song) => {
+                  return song.name.toLowerCase().includes(field.toLowerCase());
+                });
+                setSongs(filteredSearch);
+              }
+            }}
+          />
+        </div>
       </div>
       <div className="pageAll">
         <div className="allDisplay">
