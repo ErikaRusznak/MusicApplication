@@ -6,6 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import SongCardCreatedAdmin from "../SongCardCreatedAdmin/SongCardCreatedAdmin.js";
+import SearchBar from "../../../component/SearchBar/SearchBar.js";
 
 function Menu() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ function Menu() {
   const [genreSongs, setGenreSongs] = useState(songs);
   const [allSongsDisplayed, setAllSongsDisplayed] = useState(true);
   const [genre, setGenre] = useState("");
+  const [copySongs, setCopySongs] = useState([]);
 
   const handleOpen = () => {
     setOpen(!open);
@@ -32,6 +34,7 @@ function Menu() {
       .then((res) => {
         console.log(res.data);
         setSongs(res.data.data);
+        setCopySongs(res.data.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -90,6 +93,26 @@ function Menu() {
           <button className="menuButton" onClick={addSongAdmin}>
             Add Song
           </button>
+        </div>
+      </div>
+      <div className="searchBox">
+        <div>
+          <SearchBar
+            placeholder="Enter the title... "
+            handleChange={(e) => {
+              const field = e.target.value;
+              console.log(field);
+              if (field === "") {
+                setSongs(copySongs);
+              } else {
+                let filteredSearch = [];
+                filteredSearch = songs.filter((song) => {
+                  return song.name.toLowerCase().includes(field.toLowerCase());
+                });
+                setSongs(filteredSearch);
+              }
+            }}
+          />
         </div>
       </div>
       <div className="songContainer">
