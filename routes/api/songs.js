@@ -22,22 +22,21 @@ router.get("/getAll", async (req, res) => {
   }
 });
 
+// // get elements with certain names
+// router.get("/getAllWithName/:nameSearched", async (req, res) => {
+//   const data = await song.find({ artist: nameSearched });
+//   if (data) {
+//     return res.status(200).send({ data });
+//   } else {
+//     return res.status(400).send({ success: false, msg: "Data not found" });
+//   }
+// });
+
 // async because the function should wait until the mongodb is connected and fetched the data
 router.post("/save", async (req, res) => {
   const { name, artist, album, imageURL, musicGenre, isUsers } = req.body;
 
   const songExists = await song.findOne({ name });
-  // const newSong = song({
-  //   name: req.body.name,
-  //   artist: req.body.artist,
-  //   album: req.body.album,
-  //   // songURL: req.body.songURL,
-  //   imageURL: req.body.imageURL,
-  //   musicGenre: req.body.musicGenre,
-  //   isUsers: req.body.isUsers,
-  //   // isFavorite: req.body.isFavorite,
-  //   // isBought: req.body.isBought,
-  // });
   if (songExists) {
     return res.status(400).json({ message: "Song already exists" });
   }
@@ -62,13 +61,6 @@ router.post("/save", async (req, res) => {
   } else {
     return res.status(400).json({ message: "Error occured" });
   }
-
-  // try {
-  //   const savedSong = await newSong.save();
-  //   return res.status(200).send({ success: true, artist: savedSong });
-  // } catch (error) {
-  //   return res.status(400).send({ success: false, msg: error });
-  // }
 });
 
 // request to get a single artist information

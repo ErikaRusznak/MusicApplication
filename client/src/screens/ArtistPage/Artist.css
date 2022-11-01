@@ -1,0 +1,20 @@
+.allArtist {
+  background-color: rgba(150, 150, 150, 0.099);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 50px;
+  box-shadow: 0 30px 40px black;
+  border-radius: 20px;
+}
+
+.artistDisplay {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 100px;
+  overflow: auto;
+  /* height: 500px; */
+  /* background-color: red; */
+}

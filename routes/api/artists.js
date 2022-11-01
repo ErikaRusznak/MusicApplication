@@ -1,7 +1,12 @@
 const express = require("express");
 const router = express.Router();
-
+const asyncHandler = require("express-async-handler");
 const artist = require("../../models/Artist");
+const key = require("../../config/keys.js").JWTPRIVATEKEY;
+
+const createToken = (_id) => {
+  return jwt.sign({ _id }, key, { expiresIn: "3d" });
+};
 
 router.get("/getAll", async (req, res) => {
   const options = {
@@ -11,7 +16,7 @@ router.get("/getAll", async (req, res) => {
   };
   const data = await artist.find(options);
   if (data) {
-    return res.status(200).send({ success: true, artist: data });
+    return res.status(200).send({ data });
   } else {
     return res.status(400).send({ success: false, msg: "Data not found" });
   }
@@ -19,17 +24,17 @@ router.get("/getAll", async (req, res) => {
 
 // async because the function should wait until the mongodb is connected and fetched the data
 router.post("/save", async (req, res) => {
-  const newArtist = artist({
-    name: req.body.name,
-    imageURL: req.body.imageURL,
-  });
+  const { name, imageURL, description } = req.body;
 
-  try {
-    const savedArtist = await newArtist.save();
+  const savedArtist = await artist.create({
+    name,
+    imageURL,
+    description,
+  });
+  if (savedArtist)
     return res.status(200).send({ success: true, artist: savedArtist });
-  } catch (error) {
-    return res.status(400).send({ success: false, msg: error });
-  }
+
+  return res.status(400).send({ success: false, msg: "error" });
 });
 
 // request to get a single artist information
@@ -44,39 +49,39 @@ router.get("/getOne/:id", async (req, res) => {
   }
 });
 
-router.delete("/delete/:id", async (req, res) => {
-  const filter = { _id: req.params.id };
-  const result = await artist.deleteOne(filter);
-  if (result) {
-    return res
-      .status(200)
-      .send({ success: true, msg: "Data deleted successfully", data: result });
-  } else {
-    return res.status(400).send({ success: false, msg: "Data not found" });
-  }
-});
+// router.delete("/delete/:id", async (req, res) => {
+//   const filter = { _id: req.params.id };
+//   const result = await artist.deleteOne(filter);
+//   if (result) {
+//     return res
+//       .status(200)
+//       .send({ success: true, msg: "Data deleted successfully", data: result });
+//   } else {
+//     return res.status(400).send({ success: false, msg: "Data not found" });
+//   }
+// });
 
-router.put("/update/:id", async (req, res) => {
-  const filter = { _id: req.params.id };
+// router.put("/update/:id", async (req, res) => {
+//   const filter = { _id: req.params.id };
 
-  const options = {
-    upsert: true, // will create a new obj if the id is no found
-    new: true,
-  };
+//   const options = {
+//     upsert: true, // will create a new obj if the id is no found
+//     new: true,
+//   };
 
-  try {
-    const result = await artist.findOneAndUpdate(
-      filter,
-      {
-        name: req.body.name,
-        imageURL: req.body.imageURL,
-      },
-      options
-    );
-    return res.status(200).send({ success: true, data: result });
-  } catch (error) {
-    return res.status(400).send({ success: false, msg: error });
-  }
-});
+//   try {
+//     const result = await artist.findOneAndUpdate(
+//       filter,
+//       {
+//         name: req.body.name,
+//         imageURL: req.body.imageURL,
+//       },
+//       options
+//     );
+//     return res.status(200).send({ success: true, data: result });
+//   } catch (error) {
+//     return res.status(400).send({ success: false, msg: error });
+//   }
+// });
 
 module.exports = router;
