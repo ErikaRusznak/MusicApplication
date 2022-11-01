@@ -24,6 +24,9 @@ function Menu() {
   const addSongAdmin = () => {
     navigate("/addSongAdmin");
   };
+  const addArtistAdmin = () => {
+    navigate("/addArtistAdmin");
+  };
   const goAll = () => {
     navigate("/allAdmin");
   };
@@ -92,6 +95,11 @@ function Menu() {
         <div className="menuItem">
           <button className="menuButton" onClick={addSongAdmin}>
             Add Song
+          </button>
+        </div>
+        <div className="menuItem">
+          <button className="menuButton" onClick={addArtistAdmin}>
+            Add Artist
           </button>
         </div>
       </div>
