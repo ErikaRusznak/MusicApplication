@@ -23,16 +23,6 @@ const SongSchema = new Schema(
       type: String,
       required: true,
     },
-    // isFavorite: {
-    //   type: Boolean,
-    //   required: true,
-    //   default: false,
-    // },
-    // isBought: {
-    //   type: Boolean,
-    //   required: true,
-    //   default: false,
-    // },
     musicGenre: {
       type: String,
       required: true,

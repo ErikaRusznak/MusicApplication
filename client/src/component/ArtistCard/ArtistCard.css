@@ -4,8 +4,8 @@
   box-shadow: 0px 8px rgb(0, 0, 0);
 }
 
-.poza {
-  height: 125px;
+.pozaArtist {
+  height: 135px;
   width: 150px;
 }
 
@@ -59,34 +59,4 @@ div.artistName:hover {
   width: 300px;
 }
 
-.buttonsModal {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 25px;
-}
-.submitButton {
-  background-color: #1ed760;
-  margin-left: 65px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 3px 3px 3px #323232;
-  border: 1px solid rgba(0, 0, 0, 1);
-}
 
-.goBackButton {
-  background-color: #1ed760;
-  margin-left: 65px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 3px 3px 3px #323232;
-  border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.submitButton:hover,
-.goBackButton:hover {
-  background-color: #0e7933;
-
-  color: white;
-}

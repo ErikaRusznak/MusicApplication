@@ -19,6 +19,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import ErrorMessage from "../ErrorMessage.js";
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -37,6 +38,8 @@ const style = {
 export default function SongCard(props) {
   // const [isBought, setisBought] = useState(false);
   // const [isFavorite, setisFavorite] = useState(false);
+  const navigate = useNavigate();
+
   const [bankCode, setBankCode] = useState("");
   const [message, setMessage] = useState(null);
 
@@ -99,7 +102,7 @@ export default function SongCard(props) {
   };
 
   return (
-    <Card className=" entirecard rounded shadow">
+    <Card className="entirecard rounded shadow">
       <CardMedia
         className="poza"
         component="img"

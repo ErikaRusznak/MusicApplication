@@ -14,6 +14,8 @@ import AddSongAdmin from "./screens/admin/AddSongAdmin/AddSongAdmin.js";
 import About from "./screens/About/About.js";
 import Contact from "./screens/Contact/Contact.js";
 import Prices from "./screens/Prices/Prices.js";
+import ArtistPage from "./screens/ArtistPage/ArtistPage.js";
+import ArtistDisplay from "./screens/ArtistDisplay/ArtistDisplay.js";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/prices" element={<Prices />} />
+          <Route path="/artists" element={<ArtistPage />} />
+          <Route path="/artist" element={<ArtistDisplay />} />
         </Routes>
       </div>
     </div>

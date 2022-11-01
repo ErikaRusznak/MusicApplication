@@ -1,0 +1,90 @@
+.pageDisplayArtist {
+  background-color: rgba(150, 150, 150, 0.099);
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 50px;
+  box-shadow: 0 30px 40px black;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.allDisplayArtist {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+
+.imageArtistDisplay {
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.artistNameDisplay {
+  font-size: 80px;
+  color: white;
+}
+
+.artistDescription {
+  text-align: justify;
+  text-justify: inter-word;
+  width: 350px;
+  color: rgb(161, 168, 158);
+}
+
+.undoIconArtist {
+  color: #1ed760;
+  float: left;
+  cursor: pointer;
+}
+
+.songArtists {
+  width: 80%;
+}
+.songArtist {
+  background-color: rgb(42, 100, 40);
+  height: 40px;
+  margin-top: 5px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.buttonForSongs {
+  border: none;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background-color: rgba(103, 102, 102, 0.9);
+  color: #1ed760;
+}
+
+.buttonForSongs:hover {
+  background-color: rgba(150, 150, 150, 0.099);
+  color: #00ff59;
+}
+
+.pictureForSong {
+  margin-top: -5px;
+}
+
+.nameForSong {
+  color: white;
+}
+
+.nameForAlbum {
+  color: white;
+}
+
+.topMenu {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.picture {
+  text-indent: 100%;
+  overflow: hidden;
+}
