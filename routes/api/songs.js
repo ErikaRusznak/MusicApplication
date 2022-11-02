@@ -22,16 +22,6 @@ router.get("/getAll", async (req, res) => {
   }
 });
 
-// // get elements with certain names
-// router.get("/getAllWithName/:nameSearched", async (req, res) => {
-//   const data = await song.find({ artist: nameSearched });
-//   if (data) {
-//     return res.status(200).send({ data });
-//   } else {
-//     return res.status(400).send({ success: false, msg: "Data not found" });
-//   }
-// });
-
 // async because the function should wait until the mongodb is connected and fetched the data
 router.post("/save", async (req, res) => {
   const { name, artist, album, imageURL, musicGenre, isUsers } = req.body;
