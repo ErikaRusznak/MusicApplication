@@ -1,5 +1,4 @@
 import SongCard from "../../component/SongCard/SongCard.js";
-import "./FavoritesList.css";
 import React from "react";
 
 function FavoritesList(props) {

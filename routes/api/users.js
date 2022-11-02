@@ -9,13 +9,9 @@ const User = require("../../models/User");
 // controller functions
 const { registerUser, loginUser } = require("../../controllers/userController");
 
-// login route
+// routes
 router.post("/login", loginUser);
-
-// signup route
 router.post("/register", registerUser);
 
-// router.route("/register").post(registerUser);
-// router.route("/login").post(loginUser);
 
 module.exports = router;

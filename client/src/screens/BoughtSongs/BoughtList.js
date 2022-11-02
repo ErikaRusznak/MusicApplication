@@ -1,5 +1,4 @@
 import SongCard from "../../component/SongCard/SongCard.js";
-import "./BoughtList.css";
 import React from "react";
 
 function BoughtList(props) {

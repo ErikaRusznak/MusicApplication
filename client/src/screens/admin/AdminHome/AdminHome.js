@@ -1,5 +1,4 @@
 import React from "react";
-import "./AdminHome.css";
 import AdminHeader from "../../../component/admin/AdminHeader/AdminHeader.js";
 import AdminMenu from "../../../component/admin/AdminMenu/AdminMenu.js";
 
