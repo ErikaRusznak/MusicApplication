@@ -17,6 +17,7 @@ import Prices from "./screens/Prices/Prices.js";
 import ArtistPage from "./screens/ArtistPage/ArtistPage.js";
 import ArtistDisplay from "./screens/ArtistDisplay/ArtistDisplay.js";
 import AddArtistAdmin from "./screens/admin/AddArtistAdmin/AddArtistAdmin.js";
+import ArtistPageAdmin from "./screens/admin/ArtistPageAdmin/ArtistPageAdmin.js";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/artists" element={<ArtistPage />} />
           <Route path="/artist" element={<ArtistDisplay />} />
           <Route path="/addArtistAdmin" element={<AddArtistAdmin />} />
+          <Route path="/adminArtist" element={<ArtistPageAdmin />} />
         </Routes>
       </div>
     </div>

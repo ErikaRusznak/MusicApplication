@@ -30,6 +30,9 @@ function Menu() {
   const goAll = () => {
     navigate("/allAdmin");
   };
+  const allArtists = () => {
+    navigate("/adminArtist");
+  };
 
   useEffect(() => {
     axios
@@ -90,6 +93,11 @@ function Menu() {
         <div className="menuItem">
           <button className="menuButton" onClick={goAll}>
             All Songs
+          </button>
+        </div>
+        <div className="menuItem">
+          <button className="menuButton" onClick={allArtists}>
+            All Artists
           </button>
         </div>
         <div className="menuItem">
