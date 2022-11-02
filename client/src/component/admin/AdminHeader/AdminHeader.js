@@ -1,5 +1,4 @@
 import React from "react";
-import "./AdminHeader.css";
 import { BsBook } from "react-icons/bs";
 import { Logo } from "./images";
 import { NavLink } from "react-router-dom";
